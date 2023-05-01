@@ -14,7 +14,7 @@ import {
 
 const AnimatedEventExample = () => {
   const pressed = useSharedValue(false);
-  const startingPosition = 100;
+  const startingPosition = 0;
   const x = useSharedValue(startingPosition);
   const y = useSharedValue(startingPosition);
 
@@ -22,15 +22,15 @@ const AnimatedEventExample = () => {
     onStart: (event, ctx) => {
       pressed.value = true;
     },
-    onActive: (event, ctx) => {
-      x.value = startingPosition + event.translationX;
-      y.value = startingPosition + event.translationY;
-    },
-    onEnd: (event, ctx) => {
-      pressed.value = false;
-      x.value = withSpring(startingPosition);
-      y.value = withSpring(startingPosition);
-    },
+    // onActive: (event, ctx) => {
+    //   x.value = startingPosition + event.translationX;
+    //   y.value = startingPosition + event.translationY;
+    // },
+    // onEnd: (event, ctx) => {
+    //   pressed.value = false;
+    //   x.value = withSpring(startingPosition);
+    //   y.value = withSpring(startingPosition);
+    // },
   });
 
   const uas = useAnimatedStyle(() => {
@@ -48,7 +48,7 @@ const AnimatedEventExample = () => {
   return (
     <SafeAreaView style={styles.mainComponentStyle}>
       <PanGestureHandler onGestureEvent={eventHandler}>
-        <Animated.View style={[styles.ballStyle, uas, uas1]} />
+        <Animated.View style={[styles.ballStyle, uas]} />
       </PanGestureHandler>
     </SafeAreaView>
   );

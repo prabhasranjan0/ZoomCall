@@ -11,7 +11,6 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from 'react-native-reanimated';
-import ReactJSIcon from './asset/react.png';
 
 const UseShareExample = () => {
   const randomNumber = useSharedValue(100);
@@ -29,11 +28,11 @@ const UseShareExample = () => {
         onPress={() => {
           randomNumber.value = Math.random() * 350;
         }}>
-        <Animated.Image
+        {/* <Animated.Image
           source={ReactJSIcon}
           resizeMode={'contain'}
           style={style}
-        />
+        /> */}
       </TouchableOpacity>
     </SafeAreaView>
   );

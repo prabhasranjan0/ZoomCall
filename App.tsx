@@ -1,8 +1,13 @@
-import React from 'react';
-import TranslateAnimated from './src/AnimatedEvent';
+import * as React from 'react';
+import Wrapper from './src/appConfig/wrapper';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => {
-  return <TranslateAnimated />;
+  return (
+    <NavigationContainer>
+      <Wrapper />
+    </NavigationContainer>
+  );
 };
 
 export default App;
